@@ -1,0 +1,12 @@
+<div *ngFor="let annonce of annonces">
+  <div *ngIf=" annonce.etat=='confirmé' " style="background-color:green">
+{{annonce.titre}} <br>
+{{annonce.description}} <br>
+***********************
+</div>
+<div *ngIf=" annonce.etat=='en attente' " style="background-color:sandybrown">
+    {{annonce.titre}} <br>
+    {{annonce.description}} <br>
+    ***********************
+    </div>
+</div>

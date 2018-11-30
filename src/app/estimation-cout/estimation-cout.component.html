@@ -1,0 +1,30 @@
+
+<form #coutForm="ngForm">
+
+    <label> Position Souhaitéé</label>
+    <select name="pos"  [(ngModel)]="position"  required #pos="ngModel" >
+      <option  value="haut">haut</option>
+      <option  value="bas">bas</option>
+      </select>
+
+<br>
+<div [hidden]="pos.valid">
+    position est obligatoire  </div>
+
+    <br>
+    <label> Nombre de caracteres</label>
+    <input name="num" type="text" required  [(ngModel)]="nombre" class="form-control" required #num="ngModel" >
+
+
+<br>
+<div [hidden]="num.valid">
+  Le nombre de caractere  est obligatoire  </div>
+
+  <div [hidden]="num.value<60">
+      Le nombre de caractere  ne doit pas depasser 60  </div>
+<br>
+  <input type="submit" value="estimer" class="btn btn-success"  (click)="calculeCout()" [disabled]="coutForm.invalid || num.value>60">
+</form>
+
+{{cout}}
+
